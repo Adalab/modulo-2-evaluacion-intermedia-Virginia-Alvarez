@@ -1,0 +1,39 @@
+.title{
+    font-size: 20px;
+    color: grey;
+}
+
+.bigTitle{
+    font-size: 40px;
+    color:brown;
+    text-transform: uppercase;
+}
+.description{
+    font-size: 15px;
+    color: grey;
+}
+.description2{
+    font-size: 15px;
+    color: black; 
+}
+.options{
+    font-size: 10px;
+    border: solid rgb(165, 42, 42,0.21);
+}
+.btn{
+    background-color: brown;
+    width: 100px;
+    height: 30px;
+    border-radius: 5px;
+    color: white;
+}
+.result{
+    border-radius: 5px;
+    border: solid rgb(165, 42, 42,0.21);
+    color: white;
+    background-color: rgb(165, 42, 42,0.21);
+    width: 300px;
+    height: 20px;
+    text-align: center;
+
+}
