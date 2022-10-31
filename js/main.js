@@ -67,6 +67,7 @@ function play(){
     
     if (battlesNumber === MAX_BATTLES){
         btn.innerHTML = "Reiniciar Juego";
+        battleResolution();
     }
     human.innerHTML = humanPlayer;
     pc.innerHTML = pcPlayer;
@@ -79,6 +80,7 @@ function resetValues(){
     btn.innerHTML = "Batalla"
     human.innerHTML = humanPlayer;
     pc.innerHTML = pcPlayer;
+    battleResult.innerHTML = '';
 }
 
 function battleResolution(){
@@ -95,10 +97,8 @@ function handleClick(e){
     e.preventDefault();
 
     if(e.currentTarget.innerHTML === 'Batalla'){
-        battleResult.innerHTML = '';
         play();
     } else {
-        battleResolution();
         resetValues();
     }
 
