@@ -25,29 +25,83 @@ const evilForces =[
     }
 ];
 
+//BONUS
+let battlesNumber = 0;
+let humanPlayer= 0
+let pcPlayer= 0
+const MAX_BATTLES = 10;
+const human= document.querySelector('.jsHuman');
+const pc= document.querySelector('.jsPc');
+const battleResult = document.querySelector('.battleResult');
+
+//FIN BONUS
+
+
 function getRandomForce(arrayLength){
     const arrayPosition = Math.ceil(Math.random() * (arrayLength - 1));
     return evilForces[arrayPosition];
 }
-  
-const selectedEvilForce = getRandomForce(evilForces.length);
-console.log(`La máquina ha seleccionado ${selectedEvilForce.name} con fuerza ${selectedEvilForce.force}`);
+
+let selectedEvilForce;
+
+function pcSelectionForce(){
+    selectedEvilForce = getRandomForce(evilForces.length);
+    console.log(`La máquina ha seleccionado ${selectedEvilForce.name} con fuerza ${selectedEvilForce.force}`);
+    // Sé que debo quitar el console.log pero me ayuda mucho XD 
+}
 
 
-function valueSelect(){
+function play(){
+    pcSelectionForce();
     const select = parseInt(optionsWar.value);
+    battlesNumber++;
     if (select === selectedEvilForce.force ){
         result.innerHTML = 'Empate';
     } else if (select > selectedEvilForce.force ){
         result.innerHTML = 'Ha ganado el Ejército del Bien! Enhorabuena!';
+        humanPlayer++;
     } else {
         result.innerHTML = 'Ha ganado el Ejército del mal! Vuelve a intentarlo!';
+        pcPlayer++;
+    }
+    
+    if (battlesNumber === MAX_BATTLES){
+        btn.innerHTML = "Reiniciar Juego";
+    }
+    human.innerHTML = humanPlayer;
+    pc.innerHTML = pcPlayer;
+}
+
+function resetValues(){
+    battlesNumber = 0;
+    humanPlayer= 0
+    pcPlayer= 0
+    btn.innerHTML = "Batalla"
+    human.innerHTML = humanPlayer;
+    pc.innerHTML = pcPlayer;
+}
+
+function battleResolution(){
+    if (humanPlayer === pcPlayer ){
+        battleResult.innerHTML = 'Empate';
+    } else if (humanPlayer > pcPlayer ){
+        battleResult.innerHTML = 'Ha ganado el Ejército del Bien! Enhorabuena!';
+    } else {
+        battleResult.innerHTML = 'Ha ganado el Ejército del mal! Vuelve a intentarlo!';
     }
 }
 
 function handleClick(e){
     e.preventDefault();
-    valueSelect();
+
+    if(e.currentTarget.innerHTML === 'Batalla'){
+        play();
+    } else {
+        battleResolution();
+        resetValues();
+    }
+
+    
 }
 
 btn.addEventListener('click', handleClick);
