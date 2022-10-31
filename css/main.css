@@ -19,6 +19,7 @@
 .options{
     font-size: 10px;
     border: solid rgb(165, 42, 42,0.21);
+    height:30px;
 }
 .btn{
     background-color: brown;
@@ -32,7 +33,7 @@
     border: solid rgb(165, 42, 42,0.21);
     color: white;
     background-color: rgb(165, 42, 42,0.21);
-    width: 300px;
+    width: 500px;
     height: 20px;
     text-align: center;
 
