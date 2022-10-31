@@ -9,22 +9,22 @@
     text-transform: uppercase;
 }
 .description{
-    font-size: 15px;
+    font-size: 20px;
     color: grey;
 }
 .description2{
-    font-size: 15px;
+    font-size: 20px;
     color: black; 
 }
 .options{
-    font-size: 10px;
+    font-size: 14px;
     border: solid rgb(165, 42, 42,0.21);
-    height:30px;
+    height:47px;
 }
 .btn{
     background-color: brown;
     width: 100px;
-    height: 30px;
+    height: 50px;
     border-radius: 5px;
     color: white;
 }

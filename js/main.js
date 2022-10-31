@@ -32,7 +32,7 @@ let pcPlayer= 0
 const MAX_BATTLES = 10;
 const human= document.querySelector('.jsHuman');
 const pc= document.querySelector('.jsPc');
-const battleResult = document.querySelector('.battleResult');
+const battleResult = document.querySelector('.jsBattleResult');
 
 //FIN BONUS
 
@@ -95,6 +95,7 @@ function handleClick(e){
     e.preventDefault();
 
     if(e.currentTarget.innerHTML === 'Batalla'){
+        battleResult.innerHTML = '';
         play();
     } else {
         battleResolution();

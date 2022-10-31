@@ -8,26 +8,30 @@
     <title>Juego</title>
 </head>
 <body>
-    <h1 class="title">Juego</h1>
-    <h2 class="bigTitle">Los anillos de poder</h1>
-    <p class="description">La Tierra Media está en guerra! En ella lucharán razas leales a Sauron contra otras bondadosas que no quieren que el mal reine sobre sus tierras.</p>
-    <p class="description2">Eres un jugador del ejercito del bien, no olvides tu misión de ganar la batalla.</p>
-    <select class="options jsOptions">
-        <option value="" disabled selected hidden>Seleccione la raza con que vas a jugar</option>
-        <option value="1">Pelosos</option>
-        <option value="2">Sureños</option>
-        <option value="3">Enanos</option>
-        <option value="4">Númenoreanos</option>
-        <option value="5">Elfos</option>
-    </select>
-    <button Class="btn jsBtn">Batalla</button>
-    <p class="result jsResult">Comienza la batalla</p>
-    <h3>Puntuaciones</h3>
-    <ul class="list">
-        <li>Jugador: <span class="jsHuman"></span></li>
-        <li>Computadora: <span class="jsPc"></span></li>
-    </ul>
-    <p class="battleResult"></p>
+    <main>
+        <div>
+            <h1 class="title">Juego</h1>
+            <h2 class="bigTitle">Los anillos de poder</h1>
+            <p class="description">La Tierra Media está en guerra! En ella lucharán razas leales a Sauron contra otras bondadosas que no quieren que el mal reine sobre sus tierras.</p>
+            <p class="description2">Eres un jugador del ejercito del bien, no olvides tu misión de ganar la batalla.</p>
+        </div>
+        <select class="options jsOptions">
+            <option value="" disabled selected hidden>Seleccione la raza con que vas a jugar</option>
+            <option value="1">Pelosos</option>
+            <option value="2">Sureños</option>
+            <option value="3">Enanos</option>
+            <option value="4">Númenoreanos</option>
+            <option value="5">Elfos</option>
+        </select>
+        <button Class="btn jsBtn">Batalla</button>
+        <p class="result jsResult">Comienza la batalla</p>
+        <h3>Puntuaciones</h3>
+        <ul class="list">
+            <li>Jugador: <span class="jsHuman"></span></li>
+            <li>Computadora: <span class="jsPc"></span></li>
+        </ul>
+        <p class="battleResult jsBattleResult"></p>
+    </main>
 
     <script src="./js/main.js"></script>
 
