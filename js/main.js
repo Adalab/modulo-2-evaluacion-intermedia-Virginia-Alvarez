@@ -24,25 +24,26 @@ const evilForces =[
       "force": 5
     }
 ];
-
 //BONUS
 let battlesNumber = 0;
 let humanPlayer= 0
 let pcPlayer= 0
 const MAX_BATTLES = 10;
+const default_select_value = 0;
 const human= document.querySelector('.jsHuman');
 const pc= document.querySelector('.jsPc');
 const battleResult = document.querySelector('.jsBattleResult');
-
 //FIN BONUS
+let selectedEvilForce;
 
+function addInnerHTML(element, text){
+    element.innerHTML = text;
+}
 
 function getRandomForce(arrayLength){
     const arrayPosition = Math.ceil(Math.random() * (arrayLength - 1));
     return evilForces[arrayPosition];
 }
-
-let selectedEvilForce;
 
 function pcSelectionForce(){
     selectedEvilForce = getRandomForce(evilForces.length);
@@ -54,42 +55,48 @@ function pcSelectionForce(){
 function play(){
     pcSelectionForce();
     const select = parseInt(optionsWar.value);
-    battlesNumber++;
-    if (select === selectedEvilForce.force ){
-        result.innerHTML = 'Empate';
-    } else if (select > selectedEvilForce.force ){
-        result.innerHTML = 'Ha ganado el Ejército del Bien! Enhorabuena!';
-        humanPlayer++;
+
+    if(select === default_select_value) {
+        addInnerHTML(result, 'Por favor selecciona una raza');
     } else {
-        result.innerHTML = 'Ha ganado el Ejército del mal! Vuelve a intentarlo!';
-        pcPlayer++;
+        battlesNumber++;
+        if (select === selectedEvilForce.force ){
+            addInnerHTML(result, 'Empate');
+        } else if (select > selectedEvilForce.force ){
+            addInnerHTML(result, 'Ha ganado el Ejército del Bien! Enhorabuena!');
+            humanPlayer++;
+        } else {
+            addInnerHTML(result, 'Ha ganado el Ejército del mal! Vuelve a intentarlo!');
+            pcPlayer++;
+        }
+        
+        if (battlesNumber === MAX_BATTLES){
+            addInnerHTML(btn, "Reiniciar Juego");
+            battleResolution();
+        }
+        addInnerHTML(human, humanPlayer);
+        addInnerHTML(pc, pcPlayer);
+        optionsWar.value = default_select_value;
     }
-    
-    if (battlesNumber === MAX_BATTLES){
-        btn.innerHTML = "Reiniciar Juego";
-        battleResolution();
-    }
-    human.innerHTML = humanPlayer;
-    pc.innerHTML = pcPlayer;
 }
 
 function resetValues(){
     battlesNumber = 0;
     humanPlayer= 0
     pcPlayer= 0
-    btn.innerHTML = "Batalla"
-    human.innerHTML = humanPlayer;
-    pc.innerHTML = pcPlayer;
-    battleResult.innerHTML = '';
+    addInnerHTML(btn, "Batalla");
+    addInnerHTML(human, humanPlayer);
+    addInnerHTML(pc, pcPlayer);
+    addInnerHTML(battleResult, '');
 }
 
 function battleResolution(){
     if (humanPlayer === pcPlayer ){
-        battleResult.innerHTML = 'Empate';
+        addInnerHTML(battleResult, 'Empate');
     } else if (humanPlayer > pcPlayer ){
-        battleResult.innerHTML = 'Ha ganado el Ejército del Bien! Enhorabuena!';
+        addInnerHTML(battleResult, 'Ha ganado el Ejército del Bien! Enhorabuena!');
     } else {
-        battleResult.innerHTML = 'Ha ganado el Ejército del mal! Vuelve a intentarlo!';
+        addInnerHTML(battleResult, 'Ha ganado el Ejército del mal! Vuelve a intentarlo!');
     }
 }
 

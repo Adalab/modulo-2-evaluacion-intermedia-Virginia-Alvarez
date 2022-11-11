@@ -22,6 +22,13 @@ main{
     font-size: 20px;
     color: black; 
 }
+.form{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
 .options{
     font-size: 14px;
     border: solid rgb(165, 42, 42,0.21);
@@ -38,10 +45,12 @@ main{
     border-radius: 5px;
     border: solid rgb(165, 42, 42,0.21);
     color: white;
-    background-color: rgb(165, 42, 42,0.21);
+    font-weight: 800;
+    background-color: rgb(156, 112, 96, 0.5);
     width: 500px;
-    height: 20px;
+    height: 50px;
     text-align: center;
+    align-items: center;
 
 }
 
