@@ -1,9 +1,24 @@
 main{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
 }
+
+
+.game{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    text-align: justify ;
+}
+
+.gameBoard{
+    width: 100%;
+}
+
 .title{
     font-size: 20px;
     color: grey;
@@ -22,17 +37,29 @@ main{
     font-size: 20px;
     color: black; 
 }
-.form{
+
+.gameImage  {
+    height: 500px;  
+}
+
+.formDiv{
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     gap: 10px;
+    width: 100%;
 }
+
+.form {
+    width: 100%;
+}
+
 .options{
     font-size: 14px;
     border: solid rgb(165, 42, 42,0.21);
     height:47px;
+    width: 100%;
 }
 .btn{
     background-color: brown;
@@ -47,10 +74,13 @@ main{
     color: white;
     font-weight: 800;
     background-color: rgb(156, 112, 96, 0.5);
-    width: 500px;
+    width: 100%;
     height: 50px;
     text-align: center;
     align-items: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
 }
 
